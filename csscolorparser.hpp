@@ -27,12 +27,9 @@
 
 #include <string>
 #include <cmath>
-#include <experimental/optional>
+#include <optional>
 
 namespace CSSColorParser {
-
-template <class T>
-using optional = std::experimental::optional<T>;
 
 struct Color {
     inline Color() {
@@ -52,7 +49,7 @@ inline bool operator!=(const Color& lhs, const Color& rhs) {
     return !(lhs == rhs);
 }
 
-optional<Color> parse(const std::string& css_str);
+std::optional<Color> parse(const std::string& css_str);
 
 } // namespace CSSColorParser
 
